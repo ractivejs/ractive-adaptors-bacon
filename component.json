@@ -1,0 +1,16 @@
+{
+	"name": "ractive-adaptors-bacon",
+	"repo": "git://github.com/ractivejs/ractive-adaptors-bacon.git",
+	"description": "ractive-adaptors-bacon",
+	"version": "0.1.0",
+	"keywords": [],
+	"dependencies": {
+		"ractivejs/ractive": "~0.4.0"
+	},
+	"development": {},
+	"license": "MIT",
+	"main": "ractive-adaptors-bacon.js",
+	"scripts": [
+		"ractive-adaptors-bacon.js"
+	]
+}
