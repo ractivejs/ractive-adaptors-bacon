@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- '0.10'
+before_script:
+- npm install -g grunt-cli; chmod u+x scripts/deploy-to-gh-pages.sh; grunt
+script: ./scripts/deploy-to-gh-pages.sh
+env:
+  global:
+  - GH_REF: github.com/ractivejs/ractive-adaptors-bacon.git
+  - secure: jGWFBbDB7Jm7XdSSlzFefjokj3lmhkC3x4pkoiIlmuiU4h+aZ+JjLBHSdJ090oalcMV5kwG3orITo7XBsFAZJPTUs/JBPOSVwMEQIETeQ04wVtEqqTit8CTNym6eLYQqHq0DajWPVzbr9nIOTHlqCnNfYr2MIGmFbGcaQq3gh8A=
+branches:
+  only:
+    - master
