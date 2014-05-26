@@ -8,7 +8,7 @@
 	"description": "ractive-adaptors-bacon plugin for Ractive.js",
 	"dependencies": {
 		"ractive": "~0.4.0",
-		"bacon": "~0.7.13"
+		"baconjs": "~0.7.13"
 	},
 	"devDependencies": {
 		"grunt": "~0.4.5",
