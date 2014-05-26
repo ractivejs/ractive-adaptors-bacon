@@ -7,11 +7,6 @@
 	<!-- CSS -->
 	<link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
 	<link rel='stylesheet' href='demo/main.css'>
-
-	<!-- TODO add styles specific to this demo -->
-	<style type='text/css'>
-
-	</style>
 </head>
 
 <body>
@@ -22,13 +17,13 @@
 	<header>
 		<h1>Ractive.js bacon adaptor plugin</h1>
 		<p class='strap'>
-			<span class='download'>download: <a href='[TODO]'>ractive-adaptors-bacon.js</a></span>
+			<span class='download'>download: <a href='https://raw.github.com/ractivejs/ractive-adaptors-bacon/master/ractive-adaptors-bacon.js'>ractive-adaptors-bacon.js</a></span>
 			<span class='more-plugins'>more plugins at <a href='http://ractivejs.org/plugins'>ractivejs.org/plugins</a></span>
 		</p>
 	</header>
 
 	<main>
-		<p>TODO A description of the plugin goes here...</p>
+		<p>This adaptor allows you to use <a href='http://baconjs.github.io/'>Bacon.js</a> observables within your Ractive templates.</p>
 
 		<div id='demo' class='clearfix'></div>
 
@@ -43,21 +38,37 @@
 
 	<!-- Demo template -->
 	<script id='demo-template' type='text/ractive'>
-		<!-- TODO -->
-		<p>This is a demo of the plugin</p>
+		<button class='up'>up</button>
+		<button class='down'>down</button>
+
+		<p>Counter: {{counter}}</p>
 	</script>
 
 	<!-- Dependencies -->
-	<script src='lib/ractive-legacy.js'></script>
-	<script src='ractive-adaptors-bacon.js'></script>
+	<script src='vendor/ractive/ractive-legacy.js'></script>
+	<script src='vendor/jquery/dist/jquery.js'></script>
+	<script src='vendor/bacon/dist/Bacon.js'></script>
+	<script src='src/ractive-adaptors-bacon.js'></script>
 
 	<!-- Demo code -->
 	<script id='demo-code'>
-		// TODO
+		// Example adapted from http://baconjs.github.io/
+		var ractive, up, down, counter;
+
 		ractive = new Ractive({
 			el: 'demo',
-			template: '#demo-template'
+			template: '#demo-template',
+			adapt: 'Bacon'
 		});
+
+		up = $( '#demo .up' ).asEventStream( 'click' );
+		down = $( '#demo .down' ).asEventStream( 'click' );
+		counter = up.map( 1 ).merge( down.map( -1 ) )
+			.scan( 0, function ( x, y ) {
+				return x + y;
+			});
+
+		ractive.set( 'counter', counter );
 	</script>
 
 	<!-- Insert code into the page -->

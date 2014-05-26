@@ -5,7 +5,8 @@
 	"version": "0.1.0",
 	"keywords": [],
 	"dependencies": {
-		"ractivejs/ractive": "~0.4.0"
+		"ractivejs/ractive": "~0.4.0",
+		"baconjs/bacon.js": "~0.7.13"
 	},
 	"development": {},
 	"license": "MIT",

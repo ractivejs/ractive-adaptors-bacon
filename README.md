@@ -2,7 +2,7 @@
 
 *Find more Ractive.js plugins at [ractivejs.org/plugins](http://ractivejs.org/plugins)*
 
-[See the demo here.](TODO)
+[See the demo here.](http://ractivejs.github.io/ractive-adaptors-bacon)
 
 ## Usage
 
@@ -20,7 +20,23 @@ Or, if you're using a module loader, require this module:
 require( 'ractive-adaptors-bacon' );
 ```
 
-**plugin-specific instructions to go here...**
+Then, tell Ractive to use the `Bacon` adaptor:
+
+```js
+ractive = new Ractive({
+  el: 'body',
+  template: myTemplate,
+  adapt: 'Bacon',
+  data: {
+    foo: someReactiveProperty
+  }
+});
+```
+
+
+## Notes
+
+This is a work-in-progress! In particular, two-way binding is not yet implemented.
 
 
 

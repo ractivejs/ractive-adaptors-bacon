@@ -4,7 +4,8 @@
 	"author": "Rich Harris",
 	"main": "ractive-adaptors-bacon.js",
 	"dependencies": {
-		"ractive": "~0.4.0"
+		"ractive": "~0.4.0",
+		"bacon": "~0.7.13"
 	},
 	"ignore": [
 		".*",
